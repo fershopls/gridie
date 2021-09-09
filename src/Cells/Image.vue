@@ -1,5 +1,8 @@
 <template>
-  <div class="">
+  <div
+    class=""
+    v-bind="context.col.attrs"
+  >
     <img
       :src="value"
       alt=""
@@ -10,6 +13,6 @@
 
 <script>
 export default {
-  props: ["value"],
+  props: ["value", "context"],
 };
 </script>
