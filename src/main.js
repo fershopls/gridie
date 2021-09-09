@@ -1,4 +1,4 @@
-import GridieComponent from "./Formie.vue";
+import GridieComponent from "./Gridie.vue";
 import GridieCells from "./Cells/cells.js";
 
 export default FormieComponent;
