@@ -1,0 +1,24 @@
+{
+  "name": "@ferchoposting/gridie",
+  "version": "1.0.0",
+  "description": "Vue 3 Create tables with ease! Extensible and powerful",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fershopls/gridie.git"
+  },
+  "keywords": [
+    "tables",
+    "vue3",
+    "dynamic-tables"
+  ],
+  "author": "Fercho Posting",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fershopls/gridie/issues"
+  },
+  "homepage": "https://github.com/fershopls/gridie#readme"
+}
