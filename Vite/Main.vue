@@ -35,7 +35,21 @@ export default {
   setup() {
     const cols = [
       ["id", "id"],
+      {
+        name: "image",
+        label: "Imagen",
+        type: cells.Image,
+        attrs: {
+          class: "mx-auto",
+          style: "max-width: 100px;",
+        },
+      },
       ["name", "Nombre"],
+      ["location.name", "Origen"],
+      ["status", "Estado"],
+      ["gender", "Genero"],
+      ["species", "Especie"],
+      ["type", "Tipo"],
     ];
 
     return { cols };
