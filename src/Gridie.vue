@@ -2,12 +2,21 @@
   <div>
     <grid-table v-bind="$attrs">
       <tr>
-        <grid-th v-for="(col, key) in cols" :key="key">
+        <grid-th
+          v-for="(col, key) in cols"
+          :key="key"
+        >
           {{ getColumnLabel(col) }}
         </grid-th>
       </tr>
-      <tr v-for="(row, key) in rows" :key="key">
-        <grid-td v-for="(col, col_key) in cols" :key="col_key">
+      <tr
+        v-for="(row, key) in rows"
+        :key="key"
+      >
+        <grid-td
+          v-for="(col, col_key) in cols"
+          :key="col_key"
+        >
           <component
             :is="getComponentType(col)"
             :value="
@@ -23,11 +32,11 @@
 
 
 <script>
-import GridTable from "./Table/Table";
-import GridTh from "./Table/Th";
-import GridTd from "./Table/Td";
+import GridTable from "./Table/Table.vue";
+import GridTh from "./Table/Th.vue";
+import GridTd from "./Table/Td.vue";
 
-import CellDefault from "./Cells/Default";
+import CellDefault from "./Cells/Default.vue";
 
 import getSetStringProp from "./getSetStringProp.js";
 
