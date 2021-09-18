@@ -1,8 +1,9 @@
 <template>
-  <div class="max-w-lg mt-12 mx-auto border border-gray-200 rounded p-6">
+  <div class="mt-12 px-4">
     <gridie
+      class="w-full"
       :rows="rows"
-      :cells="cells"
+      :cols="cols"
     />
   </div>
 </template>
@@ -15,12 +16,29 @@ export default {
     Gridie,
   },
 
+  mounted() {
+    const url = "https://rickandmortyapi.com/api/character";
+
+    fetch(url)
+      .then((x) => x.json())
+      .then((res) => {
+        this.rows = res.results;
+      });
+  },
+
+  data() {
+    return {
+      rows: [],
+    };
+  },
+
   setup() {
-    const rows = ["id", "Webos"];
+    const cols = [
+      ["id", "id"],
+      ["name", "Nombre"],
+    ];
 
-    const cells = [[1, 2]];
-
-    return { rows, cells };
+    return { cols };
   },
 };
 </script>
