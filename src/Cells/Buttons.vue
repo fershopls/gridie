@@ -10,7 +10,7 @@
         class="px-2 py-1 rounded hover:scale-105 transform transition-transform"
         :class="getButtonStyle(button)"
       >
-        {{ button.label }}
+        {{ getButtonLabel(button) }}
       </button>
     </div>
   </div>
@@ -28,6 +28,14 @@ export default {
       }
 
       return "bg-gray-900 text-white";
+    },
+
+    getButtonLabel(button) {
+      if (typeof button.label === "function") {
+        return button.label(this.context);
+      }
+
+      return button.label;
     },
   },
 };

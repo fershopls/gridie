@@ -50,6 +50,19 @@ export default {
       ["gender", "Genero"],
       ["species", "Especie"],
       ["type", "Tipo"],
+      {
+        type: cells.Buttons,
+        buttons: [
+          {
+            label({ row }) {
+              return `Ver ${row.name}`;
+            },
+            clicked({ row }) {
+              alert(row.name);
+            },
+          },
+        ],
+      },
     ];
 
     return { cols };
