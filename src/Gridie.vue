@@ -1,19 +1,24 @@
 <template>
   <div>
-    <grid-table v-bind="$attrs">
+    <component
+      :is="table"
+      v-bind="$attrs"
+    >
       <tr>
-        <grid-th
+        <component
+          :is="th"
           v-for="(col, key) in cols"
           :key="key"
         >
           {{ getColumnLabel(col) }}
-        </grid-th>
+        </component>
       </tr>
       <tr
         v-for="(row, key) in rows"
         :key="key"
       >
-        <grid-td
+        <component
+          :is="td"
           v-for="(col, col_key) in cols"
           :key="col_key"
         >
@@ -24,9 +29,9 @@
             "
             :context="getContext({ col, row })"
           />
-        </grid-td>
+        </component>
       </tr>
-    </grid-table>
+    </component>
   </div>
 </template>
 
@@ -41,12 +46,21 @@ import CellDefault from "./Cells/Default.vue";
 import getSetStringProp from "./getSetStringProp.js";
 
 export default {
-  props: ["cols", "rows"],
+  props: {
+    cols: null,
+    rows: null,
 
-  components: {
-    GridTable,
-    GridTh,
-    GridTd,
+    th: {
+      default: GridTh,
+    },
+
+    td: {
+      default: GridTd,
+    },
+
+    table: {
+      default: GridTable,
+    },
   },
 
   methods: {
