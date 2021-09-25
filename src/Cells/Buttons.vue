@@ -1,18 +1,18 @@
 <template>
-  <div class="flex justify-around gap-x-4 gap-y-2 flex-wrap">
-    <div
+  <div v-bind="context.col.attrs">
+    <template
       v-for="(button, key) in context.col.buttons"
       :key="key"
     >
       <button
         :type="button.type ? button.type : 'button'"
         @click="button.clicked(context)"
-        class="px-2 py-1 rounded hover:scale-105 transform transition-transform"
+        class="px-2 py-1 rounded hover:scale-105 transform transition-transform inline-block"
         :class="getButtonStyle(button)"
       >
         {{ getButtonLabel(button) }}
       </button>
-    </div>
+    </template>
   </div>
 </template>
 
