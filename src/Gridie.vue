@@ -94,7 +94,7 @@ export default {
 
     getContext(localContext) {
       return {
-        cols: this.cols,
+        cols: this.getColumns(this.cols),
         rows: this.rows,
 
         ...localContext,

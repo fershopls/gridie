@@ -1,6 +1,6 @@
 <template>
   <div class="border rounded">
-    <table>
+    <table v-bind="$attrs">
       <slot />
     </table>
   </div>
