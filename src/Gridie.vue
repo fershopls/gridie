@@ -71,7 +71,7 @@ export default {
 
   methods: {
     getComponentType(column) {
-      if (column.hasOwnProperty("type")) {
+      if (column.hasOwnProperty("type") && column.type) {
         return column.type;
       }
 
@@ -92,7 +92,6 @@ export default {
     },
 
     getRowCellValue(row, column, column_key, context) {
-      return column_key;
       const key = column.name;
 
       return getSetStringProp(row, key);
