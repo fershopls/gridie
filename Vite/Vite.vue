@@ -35,16 +35,11 @@ export default {
   setup() {
     const cols = [
       c("id", "ID"),
+      c("image", "Imagen", cells.Image).attrs({
+        class: "mx-auto",
+        style: "max-width: 100px;",
+      }),
 
-      {
-        name: "image",
-        label: "Imagen",
-        type: cells.Image,
-        attrs: {
-          class: "mx-auto",
-          style: "max-width: 100px;",
-        },
-      },
       ["name", "Nombre"],
       ["location.name", "Origen"],
       ["status", "Estado"],
