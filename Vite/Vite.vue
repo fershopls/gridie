@@ -46,31 +46,30 @@ export default {
       c("species", "Especie"),
       c("type", "Tipo"),
 
-      {
-        type: cells.Buttons,
-        attrs: {
-          class: "flex items-center gap-2",
-        },
-        buttons: [
-          {
-            label({ row }) {
-              return `Ver ${row.name}`;
+      c()
+        .type(cells.Buttons)
+        .class("flex items-center gap-2")
+        .extend({
+          buttons: [
+            {
+              label({ row }) {
+                return `Ver ${row.name}`;
+              },
+              clicked({ row }) {
+                alert(row.name);
+              },
             },
-            clicked({ row }) {
-              alert(row.name);
+            {
+              label({ row }) {
+                return `Eliminar`;
+              },
+              class: "bg-red-600 text-white",
+              clicked({ row }) {
+                alert(row.name);
+              },
             },
-          },
-          {
-            label({ row }) {
-              return `Eliminar`;
-            },
-            class: "bg-red-600 text-white",
-            clicked({ row }) {
-              alert(row.name);
-            },
-          },
-        ],
-      },
+          ],
+        }),
     ];
 
     return { cols };

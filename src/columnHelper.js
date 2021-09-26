@@ -12,6 +12,12 @@ class GridieColumn {
     return this.column;
   }
 
+  type(type) {
+    this.column.type = type;
+
+    return this;
+  }
+
   class(className) {
     this.column.attrs.class = className;
 
