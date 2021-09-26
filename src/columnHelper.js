@@ -12,6 +12,12 @@ class GridieColumn {
     return this.column;
   }
 
+  format(callback) {
+    this.column.format = callback;
+
+    return this;
+  }
+
   type(type) {
     this.column.type = type;
 

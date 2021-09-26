@@ -104,7 +104,13 @@ export default {
     getRowCellValue(row, column, column_key, context) {
       const key = column.name;
 
-      return getSetStringProp(row, key);
+      let value = getSetStringProp(row, key);
+
+      if (typeof column.format == "function") {
+        value = column.format(value, context);
+      }
+
+      return value;
     },
   },
 };

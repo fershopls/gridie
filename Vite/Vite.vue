@@ -1,7 +1,7 @@
 <template>
   <div class="mt-12 px-4">
     <gridie
-      class="w-full"
+      class="w-full overflow-x-auto"
       :rows="rows"
       :cols="cols"
     />
@@ -44,7 +44,9 @@ export default {
       c("status", "Estado"),
       c("gender", "Género"),
       c("species", "Especie"),
-      c("type", "Tipo"),
+      c("type", "Tipo")
+        .class("text-center")
+        .format((value, context) => (value ? value : "--")),
 
       c()
         .type(cells.Buttons)
