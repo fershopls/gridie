@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { Gridie, cells } from "../src/main.js";
+import { Gridie, cells, c } from "../src/main.js";
 
 export default {
   components: {
@@ -34,7 +34,8 @@ export default {
 
   setup() {
     const cols = [
-      ["id", "id"],
+      c("id", "ID"),
+
       {
         name: "image",
         label: "Imagen",

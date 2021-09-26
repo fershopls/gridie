@@ -20,15 +20,15 @@
       >
         <component
           :is="td"
-          v-for="(col, col_key) in cols"
-          :key="col_key"
+          v-for="(column, column_key) in cols"
+          :key="column_key"
         >
           <component
-            :is="getComponentType(col)"
+            :is="getComponentType(column)"
             :value="
-              getRowCellValue(row, col, col_key, getContext({ col, row }))
+              getRowCellValue(row, column, column_key, getContext({ column, row }))
             "
-            :context="getContext({ col, row })"
+            :context="getContext({ column, row })"
           />
         </component>
       </component>
@@ -70,23 +70,16 @@ export default {
   },
 
   methods: {
-    getComponentType(col) {
-      if (typeof col.type === "object") {
-        return col.type;
+    getComponentType(column) {
+      if (column.hasOwnProperty("type")) {
+        return column.type;
       }
+
       return CellDefault;
     },
 
-    getColumnLabel(col) {
-      if (Array.isArray(col)) {
-        return col[1];
-      }
-
-      if (typeof col === "object") {
-        return col.label;
-      }
-
-      return col;
+    getColumnLabel(column) {
+      return column.label;
     },
 
     getContext(localContext) {
@@ -98,22 +91,11 @@ export default {
       };
     },
 
-    getRowCellValue(row, col, col_key, context) {
-      let value = null;
+    getRowCellValue(row, column, column_key, context) {
+      return column_key;
+      const key = column.name;
 
-      if (Array.isArray(col)) {
-        value = getSetStringProp(row, col[0]);
-      } else if (typeof col === "object" && typeof col.name === "undefined") {
-        value = Object.values(row)[col_key];
-      } else {
-        value = getSetStringProp(row, col.name);
-      }
-
-      if (col.hasOwnProperty("format")) {
-        value = col.format(value, context);
-      }
-
-      return value;
+      return getSetStringProp(row, key);
     },
   },
 };

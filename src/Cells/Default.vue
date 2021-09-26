@@ -1,12 +1,12 @@
 <template>
   <div
-    v-if="context.col.html"
+    v-if="context.column.html"
     v-html="value"
-    v-bind="context.col.attrs"
+    v-bind="context.column.attrs"
   ></div>
   <div
     v-else
-    v-bind="context.col.attrs"
+    v-bind="context.column.attrs"
   >{{ value }}</div>
 </template>
 

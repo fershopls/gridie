@@ -1,7 +1,7 @@
 <template>
   <div
     class=""
-    v-bind="context.col.attrs"
+    v-bind="context.column.attrs"
   >
     <img
       :src="value"
