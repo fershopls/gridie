@@ -4,7 +4,7 @@
       :is="table"
       v-bind="$attrs"
     >
-      <tr>
+      <component :is="tr">
         <component
           :is="th"
           v-for="(col, key) in cols"
@@ -12,8 +12,9 @@
         >
           {{ getColumnLabel(col) }}
         </component>
-      </tr>
-      <tr
+      </component :is="tr">
+      <component
+        :is="tr"
         v-for="(row, key) in rows"
         :key="key"
       >
@@ -30,7 +31,7 @@
             :context="getContext({ col, row })"
           />
         </component>
-      </tr>
+      </component>
     </component>
   </div>
 </template>
@@ -38,6 +39,7 @@
 
 <script>
 import GridTable from "./Table/Table.vue";
+import GridTr from "./Table/Tr.vue";
 import GridTh from "./Table/Th.vue";
 import GridTd from "./Table/Td.vue";
 
@@ -56,6 +58,10 @@ export default {
 
     td: {
       default: GridTd,
+    },
+
+    tr: {
+      default: GridTr,
     },
 
     table: {
