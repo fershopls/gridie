@@ -37,15 +37,16 @@ export default {
       c("id", "ID"),
       c("image", "Imagen", cells.Image).attrs({
         class: "mx-auto",
-        style: "max-width: 100px;",
+        style: "max-width: 20px;",
       }),
 
-      ["name", "Nombre"],
-      ["location.name", "Origen"],
-      ["status", "Estado"],
-      ["gender", "Genero"],
-      ["species", "Especie"],
-      ["type", "Tipo"],
+      c("name", "Nombre"),
+      c("location.name", "Origen"),
+      c("status", "Estado"),
+      c("gender", "Género"),
+      c("species", "Especie"),
+      c("type", "Tipo"),
+
       {
         type: cells.Buttons,
         attrs: {

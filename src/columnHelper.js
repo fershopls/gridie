@@ -6,6 +6,12 @@ class GridieColumn {
     this._attrs = {};
   }
 
+  class(className) {
+    this._attrs.class = className;
+
+    return this;
+  }
+
   attrs(attributes) {
     this._attrs = attributes;
 
