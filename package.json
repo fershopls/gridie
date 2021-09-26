@@ -1,6 +1,6 @@
 {
   "name": "@ferchoposting/gridie",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "description": "Vue 3 Create tables with ease! Extensible and powerful",
   "main": "src/main.js",
   "dependencies": {
