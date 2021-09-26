@@ -12,7 +12,7 @@
         >
           {{ getColumnLabel(col) }}
         </component>
-      </component :is="tr">
+      </component>
       <component
         :is="tr"
         v-for="(row, key) in rows"
