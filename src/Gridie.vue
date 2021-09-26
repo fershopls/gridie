@@ -7,7 +7,7 @@
       <component :is="tr">
         <component
           :is="th"
-          v-for="(col, key) in cols"
+          v-for="(col, key) in getColumns(cols)"
           :key="key"
         >
           {{ getColumnLabel(col) }}
@@ -20,7 +20,7 @@
       >
         <component
           :is="td"
-          v-for="(column, column_key) in cols"
+          v-for="(column, column_key) in getColumns(cols)"
           :key="column_key"
         >
           <component
@@ -70,6 +70,16 @@ export default {
   },
 
   methods: {
+    getColumns(columns) {
+      return columns.map((column) => {
+        if (column.constructor.name == "GridieColumn") {
+          return column.get();
+        }
+
+        return column;
+      });
+    },
+
     getComponentType(column) {
       if (column.hasOwnProperty("type") && column.type) {
         return column.type;

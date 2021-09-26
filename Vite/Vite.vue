@@ -37,7 +37,6 @@ export default {
       c("id", "ID"),
       c("image", "Imagen", cells.Image).attrs({
         class: "mx-auto",
-        style: "max-width: 20px;",
       }),
 
       c("name", "Nombre"),

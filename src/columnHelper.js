@@ -1,19 +1,34 @@
 class GridieColumn {
   constructor(name, label, type) {
-    this.name = name;
-    this.label = label;
-    this.type = type;
-    this._attrs = {};
+    this.column = {
+      name,
+      label,
+      type,
+      attrs: {},
+    };
+  }
+
+  get() {
+    return this.column;
   }
 
   class(className) {
-    this._attrs.class = className;
+    this.column.attrs.class = className;
 
     return this;
   }
 
   attrs(attributes) {
-    this._attrs = attributes;
+    this.column.attrs = attributes;
+
+    return this;
+  }
+
+  extend(attributes) {
+    this.column = {
+      ...this.column,
+      ...attributes,
+    };
 
     return this;
   }
