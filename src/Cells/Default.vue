@@ -2,11 +2,11 @@
   <div
     v-if="context.column.html"
     v-html="value"
-    v-bind="context.column._attrs"
+    v-bind="context.column.attrs"
   ></div>
   <div
     v-else
-    v-bind="context.column._attrs"
+    v-bind="context.column.attrs"
   >{{ value }}</div>
 </template>
 

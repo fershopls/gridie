@@ -1,5 +1,5 @@
 <template>
-  <div v-bind="context.column._attrs">
+  <div v-bind="context.column.attrs">
     <template
       v-for="(button, key) in context.column.buttons"
       :key="key"
