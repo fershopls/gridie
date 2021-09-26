@@ -1,5 +1,5 @@
 <template>
-  <th class="border border-blue-300 px-2 py-2 text-blue-700 uppercase">
+  <th class="py-4 border-b text-gray-500 font-normal text-sm border-gray-200 px-2">
     <slot />
   </th>
 </template>

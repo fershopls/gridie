@@ -1,6 +1,8 @@
 <template>
-  <table>
-    <slot />
-  </table>
+  <div class="border rounded">
+    <table>
+      <slot />
+    </table>
+  </div>
 </template>
 
