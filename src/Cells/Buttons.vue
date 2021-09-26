@@ -1,7 +1,7 @@
 <template>
-  <div v-bind="context.col.attrs">
+  <div v-bind="context.column.attrs">
     <template
-      v-for="(button, key) in context.col.buttons"
+      v-for="(button, key) in context.column.buttons"
       :key="key"
     >
       <button
