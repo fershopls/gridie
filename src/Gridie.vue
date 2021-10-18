@@ -76,6 +76,10 @@ export default {
           return column.get();
         }
 
+        if (column.hasOwnProperty("column")) {
+          return column.column;
+        }
+
         return column;
       });
     },
